@@ -1,0 +1,18 @@
+entry: Init_Cordovabarcode_extension
+javaentry: com.cordovabarcode.Cordovabarcode
+libraries: ["Cordovabarcode"]
+android:
+  manifest_changes: ext/platform/android/AndroidManifest.xml
+  adds: ext/platform/android/additional_files
+  source_list: ext/platform/android/ext_java.files
+  rhodes_listener: com.rho.cordovabarcode.CordovabarcodeFactory  
+  exttype: rakefile
+wp8:
+  csharp_impl: yes
+  root_namespace: rho
+
+project_paths:
+  wp8: ext/platform/wp8/CordovabarcodeLib.vcxproj
+  wm: ext/platform/wm/Cordovabarcode.vcproj
+  
+xml_api_paths: ext/Cordovabarcode.xml

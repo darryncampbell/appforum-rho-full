@@ -1,0 +1,9 @@
+ext/platform/android/generated/src/com/rho/lightsensor/LightsensorBase.java
+ext/platform/android/generated/src/com/rho/lightsensor/LightsensorFactorySingleton.java
+ext/platform/android/generated/src/com/rho/lightsensor/LightsensorSingletonBase.java
+ext/platform/android/generated/src/com/rho/lightsensor/ILightsensor.java
+ext/platform/android/generated/src/com/rho/lightsensor/ILightsensorFactory.java
+ext/platform/android/generated/src/com/rho/lightsensor/ILightsensorSingleton.java
+ext/platform/android/src/com/rho/lightsensor/Lightsensor.java
+ext/platform/android/src/com/rho/lightsensor/LightsensorFactory.java
+ext/platform/android/src/com/rho/lightsensor/LightsensorSingleton.java

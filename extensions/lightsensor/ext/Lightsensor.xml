@@ -1,0 +1,66 @@
+<?xml version = "1.0"?>
+<API>
+    <MODULE name="Lightsensor" parent="Rho">
+        <HELP_OVERVIEW>Example extension api</HELP_OVERVIEW>
+        <MORE_HELP>This is example of API. Implementation contain in extension.</MORE_HELP>
+    
+        <TEMPLATES>
+            <DEFAULT_INSTANCE/>
+        </TEMPLATES>
+
+        <CONSTANTS>
+            <CONSTANT name="NORMAL" value="0" type="STRING">
+                <DESC>Normal sensor update frequency</DESC>
+            </CONSTANT>
+            <CONSTANT name="FAST" value="1" type="STRING">
+                <DESC>Fast sensor update frequency</DESC>
+            </CONSTANT>
+         </CONSTANTS>
+
+         <PROPERTIES >
+            <DESC>list of properties supported by instance of object</DESC>
+            <PROPERTY name="delay" type="INTEGER" >
+                <DESC>The delay between light sensor updates</DESC>
+            </PROPERTY>
+        </PROPERTIES>
+
+        <METHODS>
+
+            <METHOD name="enumerate" access="STATIC" hasCallback="optional">
+                <RETURN type="ARRAY">
+                    <DESC>Array of Lightsensor objects</DESC>
+                    <PARAM type="SELF_INSTANCE"/>
+                </RETURN>
+            </METHOD>
+    
+            <METHOD name="startListening" hasCallback="mandatory">
+                <DESC>Start listening for Light sensor changes</DESC>
+                <PARAMS>
+                    <PARAM name="propertyMap" type="HASH">
+                        <DESC>Some description</DESC>
+                    </PARAM>
+                </PARAMS>
+                <CALLBACK type="HASH">
+                    <DESC>The light sensor value</DESC>
+                    <PARAMS>
+                        <PARAM name="lux" type="float">
+                            <DESC>The lux value returned from the light sensor</DESC>
+                        </PARAM>
+                    </PARAMS>
+                </CALLBACK>
+            </METHOD>
+            
+            <METHOD name="stopListening">
+                <DESC>Stop listening on the light sensor (if applicable)</DESC>
+            </METHOD>
+    
+        </METHODS>
+        
+        <USER_OVERVIEW>
+        </USER_OVERVIEW>
+
+        <VER_INTRODUCED>5.1.0</VER_INTRODUCED>
+        <PLATFORM>
+         </PLATFORM>
+    </MODULE>
+</API>    

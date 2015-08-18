@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.rhomobile.rhodes"
+    android:installLocation="auto"
+    android:versionCode="29"
+    android:versionName="2.3.3">
+    
+    <application>
+    
+            <activity
+                android:name="com.google.zxing.client.android.CaptureActivity"
+                android:clearTaskOnLaunch="true"
+                android:configChanges="orientation|keyboardHidden"
+                android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+                android:windowSoftInputMode="stateAlwaysHidden"
+                android:exported="false">
+                <intent-filter>
+                    <action android:name="com.google.zxing.client.android.SCAN"/>
+                    <category android:name="android.intent.category.DEFAULT"/>
+                </intent-filter>
+            </activity>
+            <activity android:name="com.google.zxing.client.android.encode.EncodeActivity" android:label="Share via barcode">
+                <intent-filter>
+                    <action android:name="com.phonegap.plugins.barcodescanner.ENCODE"/>
+                    <category android:name="android.intent.category.DEFAULT"/>
+                </intent-filter>
+            </activity>
+            <activity android:name="com.google.zxing.client.android.HelpActivity" android:label="Share via barcode">
+                <intent-filter>
+                    <action android:name="android.intent.action.VIEW"/>
+                    <category android:name="android.intent.category.DEFAULT"/>
+                </intent-filter>
+            </activity>
+    
+    </application>
+
+            <uses-permission android:name="android.permission.CAMERA" />
+            <uses-permission android:name="android.permission.FLASHLIGHT" />
+            <!-- Not required to allow users to work around this -->
+            <uses-feature android:name="android.hardware.camera" android:required="false" />
+    
+</manifest> 

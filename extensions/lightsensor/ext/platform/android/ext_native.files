@@ -1,0 +1,7 @@
+ext/platform/android/generated/jni/Lightsensor.cpp
+ext/platform/android/generated/jni/lightsensor_ruby_wrap.cpp
+ext/platform/android/generated/jni/lightsensor_js_wrap.cpp
+ext/platform/android/jni/Lightsensor_impl.cpp
+ext/shared/generated/lightsensor_api_init.cpp
+ext/shared/generated/lightsensor_js_api.cpp
+ext/shared/generated/lightsensor_ruby_api.c

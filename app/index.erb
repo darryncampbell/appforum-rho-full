@@ -1,0 +1,52 @@
+<div data-role="page" data-url="<%= Rho::Application.startURI %>/">
+
+    
+  <div data-role="header" data-position="inline">
+    <h1>AppforumRhoFull</h1>
+    <% if Rho::RhoConnectClient.isLoggedIn %>
+    <a href="<%= url_for :controller => :Settings, :action => :do_sync %>" class="ui-btn-left" data-icon="refresh">
+      Sync
+    </a>
+    <a href="<%= url_for :controller => :Settings, :action => :logout %>" class="ui-btn-right" data-icon="star">
+	    Logout
+	  </a>
+    <% else %>
+        <a href="<%= url_for :controller => :Settings, :action => :login %>" class="ui-btn-right" data-icon="star">Login</a>
+    <% end %>
+  </div>
+
+  <script>
+	function startLightSensor()
+	{
+    Rho.Lightsensor.startListening(
+      {"delay":Rho.Lightsensor.NORMAL}, 
+      function(lux)
+      {
+        console.log(lux);
+        document.getElementById('lightSensorOutput').innerHTML = "<br/>Lux: " + lux;
+      }
+    );
+	}
+	function stopLightSensor()
+	{
+    Rho.Lightsensor.stopListening();
+	}
+	function scanBarcode()
+	{
+		Rho.Cordovabarcode.scan({}, function(scan){alert(scan);});
+    document.getElementById('lightSensorOutput').innerHTML = "Light Sensor Output";
+	}
+  </script>
+  
+  <div data-role="content">
+    <ul data-role="listview">
+      <li><a href="javascript:startLightSensor()">Start Light Sensor</a></li>
+      <li><a href="javascript:stopLightSensor()">Stop Light Sensor</a></li>
+      <li><a href="javascript:scanBarcode()">Scan Barcode</a></li>
+    </ul>
+  </div>
+  <div id='lightSensorOutput'>
+    Light Sensor Output
+  </div>
+
+</div>

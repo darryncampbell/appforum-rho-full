@@ -1,0 +1,10 @@
+ext/platform/android/generated/src/com/rho/cordovabarcode/CordovabarcodeBase.java
+ext/platform/android/generated/src/com/rho/cordovabarcode/CordovabarcodeFactorySingleton.java
+ext/platform/android/generated/src/com/rho/cordovabarcode/CordovabarcodeSingletonBase.java
+ext/platform/android/generated/src/com/rho/cordovabarcode/ICordovabarcode.java
+ext/platform/android/generated/src/com/rho/cordovabarcode/ICordovabarcodeFactory.java
+ext/platform/android/generated/src/com/rho/cordovabarcode/ICordovabarcodeSingleton.java
+ext/platform/android/src/com/rho/cordovabarcode/BarcodeScanner.java
+ext/platform/android/src/com/rho/cordovabarcode/Cordovabarcode.java
+ext/platform/android/src/com/rho/cordovabarcode/CordovabarcodeFactory.java
+ext/platform/android/src/com/rho/cordovabarcode/CordovabarcodeSingleton.java
