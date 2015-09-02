@@ -33,7 +33,12 @@
 	}
 	function scanBarcode()
 	{
-		Rho.Cordovabarcode.scan({}, function(scan){alert(scan);});
+		Rho.Cordovabarcode.scan({}, function(result){
+          alert("We got a barcode\n" +
+                "Result: " + result.text + "\n" +
+                "Format: " + result.format + "\n" +
+                "Cancelled: " + result.cancelled);
+    });
     document.getElementById('lightSensorOutput').innerHTML = "Light Sensor Output";
 	}
   </script>

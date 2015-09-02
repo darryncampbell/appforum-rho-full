@@ -9,36 +9,34 @@
             <DEFAULT_INSTANCE/>
         </TEMPLATES>
 
+<METHODS>
+
+    <METHOD name="enumerate" access="STATIC" hasCallback="optional">
+        <RETURN type="ARRAY">
+            <DESC>Array of Cordovabarcode objects</DESC>
+            <PARAM type="SELF_INSTANCE" />
+        </RETURN>
+    </METHOD>
+
+    <METHOD name="scan" hasCallback="mandatory">
+        <DESC>Start listening for Light sensor changes</DESC>
+        <PARAMS>
+            <PARAM name="propertyMap" type="HASH">
+            <DESC>Some description</DESC>
+            </PARAM>
+        </PARAMS>
+        <CALLBACK type="HASH">
+            <DESC>The light sensor value</DESC>
+            <PARAMS>
+                <PARAM name="data" type="float">
+                <DESC>The scanned barcode data</DESC>
+                </PARAM>
+            </PARAMS>
+        </CALLBACK>
+    </METHOD>
 
 
-        <METHODS>
-
-            <METHOD name="enumerate" access="STATIC" hasCallback="optional">
-                <RETURN type="ARRAY">
-                    <DESC>Array of Cordovabarcode objects</DESC>
-                    <PARAM type="SELF_INSTANCE"/>
-                </RETURN>
-            </METHOD>
-    
-            <METHOD name="scan" hasCallback="mandatory">
-                <DESC>Start listening for Light sensor changes</DESC>
-                <PARAMS>
-                    <PARAM name="propertyMap" type="HASH">
-                        <DESC>Some description</DESC>
-                    </PARAM>
-                </PARAMS>
-                <CALLBACK type="HASH">
-                    <DESC>The light sensor value</DESC>
-                    <PARAMS>
-                        <PARAM name="data" type="float">
-                            <DESC>The scanned barcode data</DESC>
-                        </PARAM>
-                    </PARAMS>
-                </CALLBACK>
-            </METHOD>
-
-
-        </METHODS>
+</METHODS>
         
         <USER_OVERVIEW>
         </USER_OVERVIEW>

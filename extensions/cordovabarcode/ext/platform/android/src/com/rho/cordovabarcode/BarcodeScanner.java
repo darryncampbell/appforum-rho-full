@@ -13,6 +13,9 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.Map;
+import java.util.HashMap;
+
 import android.app.Activity;
 import android.content.Intent;
 import android.util.Log;
@@ -195,30 +198,34 @@ public class BarcodeScanner {
         Log.d(LOG_TAG, "DARRYN - NEW ACTIVITY RESULT");
         if (requestCode == REQUEST_CODE) {
             if (resultCode == Activity.RESULT_OK) {
-                JSONObject obj = new JSONObject();
+//                JSONObject obj = new JSONObject();
+                Map<String, Object> obj = new HashMap<String, Object>();
                 try {
                     obj.put(TEXT, intent.getStringExtra("SCAN_RESULT"));
                     obj.put(FORMAT, intent.getStringExtra("SCAN_RESULT_FORMAT"));
                     obj.put(CANCELLED, false);
                     Log.d(LOG_TAG, "DARRYN - SETTING RESULT");
-                    this.result.set((String)obj.get(TEXT));
+                    //this.result.set((String)obj.get(TEXT));
+                    this.result.set(obj);
 
-                } catch (JSONException e) {
+                } catch (Exception e) {
                     Log.d(LOG_TAG, "This should never happen");
                 }
                 //this.success(new PluginResult(PluginResult.Status.OK, obj), this.callback);
   //              this.callbackContext.success(obj);
             } else if (resultCode == Activity.RESULT_CANCELED) {
-                JSONObject obj = new JSONObject();
+//                JSONObject obj = new JSONObject();
+                Map<String, Object> obj = new HashMap<String, Object>();
                 try {
                     obj.put(TEXT, "");
                     obj.put(FORMAT, "");
                     obj.put(CANCELLED, true);
-                } catch (JSONException e) {
+                } catch (Exception e) {
                     Log.d(LOG_TAG, "This should never happen");
                 }
                 //this.success(new PluginResult(PluginResult.Status.OK, obj), this.callback);
                 //this.callbackContext.success(obj);
+                this.result.set(obj);
             } else {
                 //this.error(new PluginResult(PluginResult.Status.ERROR), this.callback);
       //          this.callbackContext.error("Unexpected error");
