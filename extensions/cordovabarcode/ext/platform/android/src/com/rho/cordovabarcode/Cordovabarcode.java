@@ -22,6 +22,7 @@ public class Cordovabarcode extends CordovabarcodeBase implements ICordovabarcod
     public void scan(Map<String,String> params, IMethodResult result) {
         b = new BarcodeScanner(result);
         JSONArray args = new JSONArray();
+        //  TODO: Put params into args
         b.scan(args);
     }
 
